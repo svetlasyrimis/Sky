@@ -8,7 +8,7 @@ Sky is a location-aware weather web app that displays weather forecast as a shor
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+Wireframes are uploaded in the repo.
 
 ## MVP / PostMVP
 
@@ -28,9 +28,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 ## React Component Hierarchy
 
-Define the the React components and the architectural design of your app.
-
-## Components
+### Components
 This is the list of components I will be building and using.
 
 | Component | Description | 
