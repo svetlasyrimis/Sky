@@ -12,8 +12,10 @@ const Input = (props) => {
             value={props.value}
             onChange={props.handleChange}
             placeholder="Search for Location"
+            
           />
-            <button width="50px" >Get Forecast</button>
+           <span role="img" aria-label="cloud">🌤️</span> 
+          <button width="50px" >Get Forecast</button>
           </form>
       </div>
   )

@@ -1,6 +1,6 @@
 import React from 'react';
-import {Link,Route} from 'react-router-dom'
-import Home from './Home'
+import {Link} from 'react-router-dom'
+
 
 class Header extends React.Component  {
   render() {
@@ -11,9 +11,6 @@ class Header extends React.Component  {
         <Link to="/"><img id="logo" src="/images/logo.png" alt="" width="100px" height="100px"/></Link>
         </nav>
       </header>
-      <Route
-         path="/"
-        exact render={() => <Home />} />
       </div>
     )
   }
