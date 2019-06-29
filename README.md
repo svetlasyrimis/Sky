@@ -8,7 +8,7 @@ Sky is a location-aware weather web app that displays weather forecast as a shor
 
 ## Wireframes
 
-Wireframes are uploaded in the repo.
+Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
 ## MVP / PostMVP
 
@@ -28,7 +28,9 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 ## React Component Hierarchy
 
-### Components
+Define the the React components and the architectural design of your app.
+
+## Components
 This is the list of components I will be building and using.
 
 | Component | Description | 
@@ -63,7 +65,7 @@ Helper functions should be generic enought that they can be reused in other appl
 | --- | :---: |  
 | timeCoverter | This will convert UNIX timestamp to 12-hour format units. |
 | dateConverter | This will convert UNIX timestamp to a date. |
-| URLify | This will convert a string into a proper format for the API call.  |
+| URLify | This will convert a string into a proper format for the API call.|
 
 ## Additional Libraries
  Use this section to list all supporting libraries and thier role in the project. 
