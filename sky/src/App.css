@@ -1,0 +1,63 @@
+.App {
+  text-align: center;
+}
+/* background-image: url('./background.jpg'); */
+body {
+  margin: 0;
+  
+  background: url('https://cdn.pixabay.com/photo/2017/05/20/20/22/clouds-2329680_960_720.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+  
+   
+  
+}
+
+.logo:hover {
+	background-color: blue
+	/* barbel colors: green #9CC055,blue #399CE9; yellow; #FFE633; */
+}
+header,footer {
+  height: 15vh;
+  background-color: yellow;
+}
+
+.main {
+  height: 70vh;
+}
+
+button {
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 20%;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-self: flex-end;
+}
+
+a {
+  align-self: center;
+}
+
+#symbol,h3 {
+  padding:10px;
+  align-self: center;
+  font-size: 26px;
+  font-weight: bolder;
+}
+
+.weather-card{
+  color: white;
+}
+
+.wi {
+  font-size: 2em;
+}
