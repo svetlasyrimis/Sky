@@ -10,6 +10,7 @@ class Home extends React.Component {
     this.state = {
       currentWeather: {},
       hourlyWeather: [],
+      weeklyWeather:[],
       coordinates: '',
       city: '',
       flag: '',
@@ -35,20 +36,24 @@ class Home extends React.Component {
 
     let current = response.currently
     let hourly = response.hourly.data
-
-    // console.log(hourly)
-
+    let weekly = response.daily.data
+    
     this.setState({
       currentWeather: current,
       location: exactLocation,
       flag: flag,
-      hourlyWeather: hourly
+      hourlyWeather: hourly,
+      weeklyWeather: weekly
     })
-
+    
     localStorage.setItem("hourlyWeather", JSON.stringify(hourly));
-
+    localStorage.setItem("weeklyWeather", JSON.stringify(weekly));
+    // localStorage.setItem("currentWeather", JSON.stringify(current));
     this.props.updateHourly(hourly)
-
+    this.props.updateWeekly(weekly)
+    // this.props.updateCurrently(current)
+    
+    
   }
 
   render() {
@@ -69,10 +74,11 @@ class Home extends React.Component {
               <div className="forecast">
 
                 <Link to="/hourly"><button width="50px" >Get Hourly Forecast</button></Link>
-
-                <button width="50px" >Get Weekly Forecast</button>
+                
+                <Link to="/weekly"><button width="50px" >Get Weekly Forecast</button></Link> 
               </div>
-            </div>
+            </div> 
+          
           }
         </main>
       </div>

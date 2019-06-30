@@ -1,8 +1,7 @@
 import React from 'react';
-
 import { uid } from 'react-uid'
 import HourlyCard from './HourlyCard'
-import {Route} from 'react-router-dom'
+import {Link,Route} from 'react-router-dom'
 import App from '../App';
 
 const HourlyList = (props) => {
@@ -20,7 +19,7 @@ const HourlyList = (props) => {
       ) : <Route
           path="/"
           exact render={App} />}
-        
+      <Link to="/weekly"><button width="50px" >Get Weekly Forecast</button></Link>
     </div>
   )
 }

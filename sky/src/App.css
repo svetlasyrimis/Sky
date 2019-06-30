@@ -19,9 +19,19 @@ body {
 
 header,footer {
   height: 15vh;
-  background-color: yellow;
+  /* background: rgb(237,222,20);
+background: radial-gradient(circle, rgba(237,222,20,1) 23%, rgba(0,212,255,1) 100%); */
+  background-color: #effd5f;
+  
+  /* opacity: 0.5; */
 }
 
+/* 031337
+366A90
+707F92
+8FABCB
+CCC8BF
+AABBCA */
 .main {
   height: 70vh;
 }
@@ -43,7 +53,9 @@ footer {
 a {
   align-self: center;
 }
-
+aria-label flag {
+  size: 20px;
+}
 #symbol,h3 {
   padding:10px;
   align-self: center;
@@ -51,7 +63,7 @@ a {
   font-weight: bolder;
 }
 
-#temp {
+.temp {
   font-size: 1.4em;
   font-family: "Lucida Console", Monaco, monospace;
 }
@@ -67,7 +79,8 @@ a {
   line-height: 0.5em;
   letter-spacing: 0.8px;
   word-spacing: 1.2px;
-  font-weight: 1.2em;;
+  font-weight: 1.2em;
+  
   background-color: rgba(240, 248, 255, 0.1);
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
@@ -82,6 +95,7 @@ a {
   -moz-box-shadow: 66px 10px 133px 31px rgba(0,0,0,0.68);
   box-shadow: 66px 10px 133px 31px rgba(0,0,0,0.68);
 }
+
 .hourly-card {
   width: 20vw;
   height: 20vh;

@@ -5,17 +5,25 @@ import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import './App.css';
-import HourlyList from './components/HourlyList';
 
+import HourlyList from './components/HourlyList';
+import WeeklyList from './components/WeeklyList'
 class App extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
       hourlyWeather: [],
+      weeklyWeather: [],
+      currentWeather: {}
     }
   }
-  
+  // updateCurrently = (object) => {
+  //   console.log("APP: ", object)
+  //   this.setState({
+  //     currentWeather: object
+  //   })
+  // }
 
   updateHourly = (array) => {
     console.log("APP: ", array)
@@ -24,6 +32,12 @@ class App extends React.Component {
     })
   }
 
+  updateWeekly = (array) => {
+    console.log("APP: ", array)
+    this.setState({
+      weeklyWeather: array
+    })
+  }
   render() {
     return (
       <div className="App">
@@ -31,11 +45,22 @@ class App extends React.Component {
 
         <Route
           path="/"
-          exact render={() => <Home updateHourly={this.updateHourly} />} />
+          exact render={() => <Home
+            updateHourly={this.updateHourly}
+            updateWeekly={this.updateWeekly}
+            // updateCurrently={this.updateCurrently}
+          />} />
 
         <Route
           path="/hourly"
-          exact render={() => <HourlyList hourlyWeather={this.state.hourlyWeather}/>} />
+          exact render={() => <HourlyList hourlyWeather={this.state.hourlyWeather} />} />
+        
+        <Route
+          path="/weekly"
+          exact render={() => <WeeklyList weeklyWeather={this.state.weeklyWeather} />} />
+        {/* <Route
+          path="/current"
+          exact render={() => <Home currentWeather={this.state.currentWeather.history} />} /> */}
 
         <Footer />
       </div>

@@ -11,3 +11,11 @@ export const timeConverter = (timestamp) => {
   let time = Object.values(timeObject.toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3"));
   return time
 }
+
+export const weekdayMaker = (timestamp) => {
+  let options = { weekday: 'short' };
+  let timeObject = new Date(timestamp * 1000);
+  let weekday = timeObject.toLocaleDateString("en-US", options)
+  // console.log(date)
+  return weekday
+}

@@ -5,6 +5,7 @@ const Input = (props) => {
     return (
       <div>
         <form action="" onSubmit={props.handleSubmit}>
+        
           <input
             type="text"
             name={props.name}

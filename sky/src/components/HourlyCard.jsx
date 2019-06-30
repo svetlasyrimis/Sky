@@ -1,5 +1,5 @@
 import React from 'react';
-import {dateMaker,timeConverter} from '../services/helper'
+import {weekdayMaker,timeConverter} from '../services/helper'
 import ReactAnimatedWeather from 'react-animated-weather'
 
 const HourlyCard = (props) => {
@@ -14,14 +14,12 @@ const HourlyCard = (props) => {
           size={128}
           animate={true}
         />
-        <p>{timeConverter(props.item.time)}</p>
-        <p>{props.item.temperature}<span>&#8457;</span></p>
         
+        <p>{weekdayMaker(props.item.time)} {timeConverter(props.item.time)}</p>
+        <p className="temp">{props.item.temperature}<span>&#8457;</span></p>
         </div>   
     </div>
   )
 } 
 
 export default HourlyCard 
-
-{/* Date: {dateMaker(item.time)}{' '} */}
