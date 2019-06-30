@@ -15,10 +15,10 @@ class App extends React.Component {
       hourlyWeather: [],
     }
   }
-
+  
 
   updateHourly = (array) => {
-    console.log("APP: ",array)
+    console.log("APP: ", array)
     this.setState({
       hourlyWeather: array
     })
@@ -27,16 +27,15 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-
         <Header />
 
         <Route
           path="/"
-          exact render={() => <Home updateHourly={(array) => this.updateHourly} />} />
+          exact render={() => <Home updateHourly={this.updateHourly} />} />
 
         <Route
           path="/hourly"
-          exact render={() => <HourlyList hourlyWeather={this.state.hourlyWeather} />} />
+          exact render={() => <HourlyList hourlyWeather={this.state.hourlyWeather}/>} />
 
         <Footer />
       </div>
