@@ -48,15 +48,17 @@ class Home extends React.Component {
     
     localStorage.setItem("hourlyWeather", JSON.stringify(hourly));
     localStorage.setItem("weeklyWeather", JSON.stringify(weekly));
-    // localStorage.setItem("currentWeather", JSON.stringify(current));
-    this.props.updateHourly(hourly)
-    this.props.updateWeekly(weekly)
+    localStorage.setItem("homeState", JSON.stringify(this.state));
+    // this.props.updateHourly(hourly)
+    // this.props.updateWeekly(weekly)
     // this.props.updateCurrently(current)
-    
     
   }
 
   render() {
+    if (Object.keys(this.state.currentWeather).length <= 0) {
+      this.setState(JSON.parse(localStorage.getItem("homeState")));
+    }
     return (
       <div className='main'>
         <Input

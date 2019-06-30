@@ -5,12 +5,8 @@ import {Link,Route} from 'react-router-dom'
 import App from '../App';
 
 const HourlyList = (props) => {
-  let hourly = props.hourlyWeather;
-
-  if (hourly.length <= 0) { 
-    hourly = JSON.parse(localStorage.getItem("hourlyWeather"));
-  }
-
+  let hourly = JSON.parse(localStorage.getItem("hourlyWeather"));
+  
   return (
     <div className="hourly-list">
       {hourly.length > 0 ? (hourly).map((item) => <div key={uid(item)}>

@@ -10,14 +10,14 @@ import HourlyList from './components/HourlyList';
 import WeeklyList from './components/WeeklyList'
 class App extends React.Component {
 
-  constructor(props) {
-    super(props)
-    this.state = {
-      hourlyWeather: [],
-      weeklyWeather: [],
-      currentWeather: {}
-    }
-  }
+  // constructor(props) {
+  //   super(props)
+  //   this.state = {
+  //     hourlyWeather: [],
+  //     weeklyWeather: [],
+  //     currentWeather: {}
+  //   }
+  // }
   // updateCurrently = (object) => {
   //   console.log("APP: ", object)
   //   this.setState({
@@ -25,19 +25,19 @@ class App extends React.Component {
   //   })
   // }
 
-  updateHourly = (array) => {
-    console.log("APP: ", array)
-    this.setState({
-      hourlyWeather: array
-    })
-  }
+  // updateHourly = (array) => {
+  //   console.log("APP: ", array)
+  //   this.setState({
+  //     hourlyWeather: array
+  //   })
+  // }
 
-  updateWeekly = (array) => {
-    console.log("APP: ", array)
-    this.setState({
-      weeklyWeather: array
-    })
-  }
+  // updateWeekly = (array) => {
+  //   console.log("APP: ", array)
+  //   this.setState({
+  //     weeklyWeather: array
+  //   })
+  // }
   render() {
     return (
       <div className="App">
@@ -46,21 +46,19 @@ class App extends React.Component {
         <Route
           path="/"
           exact render={() => <Home
-            updateHourly={this.updateHourly}
-            updateWeekly={this.updateWeekly}
+            // updateHourly={this.updateHourly}
+            // updateWeekly={this.updateWeekly}
             // updateCurrently={this.updateCurrently}
           />} />
 
         <Route
           path="/hourly"
-          exact render={() => <HourlyList hourlyWeather={this.state.hourlyWeather} />} />
+          exact render={() => <HourlyList />} />
         
         <Route
           path="/weekly"
-          exact render={() => <WeeklyList weeklyWeather={this.state.weeklyWeather} />} />
-        {/* <Route
-          path="/current"
-          exact render={() => <Home currentWeather={this.state.currentWeather.history} />} /> */}
+          exact render={() => <WeeklyList />} />
+        
 
         <Footer />
       </div>

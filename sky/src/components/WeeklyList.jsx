@@ -5,11 +5,7 @@ import App from '../App';
 import WeeklyCard from './WeeklyCard'
 
 const WeeklyList = (props) => {
-  let weekly = props.weeklyWeather;
-  
-  if (weekly.length <= 0) { 
-    weekly = JSON.parse(localStorage.getItem("weeklyWeather"));
-  }
+  let weekly = JSON.parse(localStorage.getItem("weeklyWeather"));
   
   return (
     <div className="weekly-list">
@@ -20,7 +16,7 @@ const WeeklyList = (props) => {
           path="/"
           exact render={App} />}
       <Link to="/hourly"><button width="50px" >Get Hourly Forecast</button></Link> 
-      {/* <Link to="/current"><button width="50px" >Go Backto Summary</button></Link>  */}
+      <Link to="/"><button width="50px" >Get Summary</button></Link> 
     </div>
   )
 
