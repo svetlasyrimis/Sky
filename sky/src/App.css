@@ -4,14 +4,18 @@
 
 body {
   margin: 0;
-  background: url('https://cdn.pixabay.com/photo/2017/05/20/20/22/clouds-2329680_960_720.jpg') no-repeat center center fixed; 
+  background: url('./background.jpg') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   background-attachment: fixed;
 }
-
+ hr {
+  border-style: solid;
+  border-color: cornflowerblue;
+  width:20vw;
+ }
 .logo:hover {
 	background-color: blue
 	/* barbel colors: green #9CC055,blue #399CE9; yellow; #FFE633; */
@@ -19,6 +23,8 @@ body {
 
 header,footer {
   height: 15vh;
+  background-attachment: fixed;
+  
   /* background: rgb(237,222,20);
 background: radial-gradient(circle, rgba(237,222,20,1) 23%, rgba(0,212,255,1) 100%); */
   background-color: #effd5f;
@@ -36,11 +42,29 @@ AABBCA */
   height: 70vh;
 }
 
-button {
-  padding: 10px;
-  font-weight: bold;
-  border-radius: 20px;
+.search-btn {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#1a0707;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
 }
+.search-btn:hover {
+	background-color:#5cbf2a;
+}
+.search-btn:active {
+	position:relative;
+	top:1px;
+}
+
 
 footer {
   display: flex;
@@ -53,8 +77,16 @@ footer {
 a {
   align-self: center;
 }
-aria-label flag {
-  size: 20px;
+/* #flag {
+  font-size:20px;
+  height: 46px!important;
+  width: 46px!important;
+} */
+.sun {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 #symbol,h3 {
   padding:10px;
@@ -73,7 +105,10 @@ aria-label flag {
   width: 80px;
   align-self: center;
 }
-
+.hourly-card canvas {
+  height: 80px;
+  width: 80px;
+}
 .weather-card {
   color: black;
   line-height: 0.5em;
@@ -113,7 +148,30 @@ aria-label flag {
   -webkit-border-radius: 72px 71px 74px 72px;
   border: 2px solid #000000;
 }
+.daily-card {
+  color: black;
+  line-height: 0.5em;
+  letter-spacing: 0.8px;
+  word-spacing: 1.2px;
+  font-weight: 1.2em;
+  background-color: rgba(240, 248, 255, 0.253);
+  margin: 15px;
+  padding: 10px;
+  width: 30vw;
 
+  border-radius: 72px 71px 74px 72px;
+  -moz-border-radius: 72px 71px 74px 72px;
+  -webkit-border-radius: 72px 71px 74px 72px;
+  border: 2px solid #000000;
+}
+.weekly-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+
+}
 .hourly-list {
   display: flex;
   flex-direction: row;
@@ -129,6 +187,20 @@ aria-label flag {
 }
 
 .forecast {
+  padding: 10px;
+  margin: 5px;
   display: flex;
   flex-direction: row;
+  justify-content: center;
+}
+
+input[type=text] {
+  width: 30%;
+  padding: 8px 8px;
+  border-radius: 30px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 18px;
+  font-weight: bold;
 }

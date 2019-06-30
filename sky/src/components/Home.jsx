@@ -30,13 +30,13 @@ class Home extends React.Component {
     const coordinates = await getCoordinates(this.state.value)
     const response = await fetchWeather(coordinates)
     const location = await getDetails(coordinates)
-
+    console.log(location)
     let flag = location.data.results[0].annotations.flag
     let exactLocation = location.data.results[0].components
 
     let current = response.currently
     let hourly = response.hourly.data
-    let weekly = response.daily.data
+    let weekly = response.daily.data.splice(1,7)
     
     this.setState({
       currentWeather: current,
@@ -48,17 +48,17 @@ class Home extends React.Component {
     
     localStorage.setItem("hourlyWeather", JSON.stringify(hourly));
     localStorage.setItem("weeklyWeather", JSON.stringify(weekly));
-    localStorage.setItem("homeState", JSON.stringify(this.state));
+    // localStorage.setItem("homeState", JSON.stringify(this.state));
     // this.props.updateHourly(hourly)
     // this.props.updateWeekly(weekly)
     // this.props.updateCurrently(current)
     
   }
-
+  
   render() {
-    if (Object.keys(this.state.currentWeather).length <= 0) {
-      this.setState(JSON.parse(localStorage.getItem("homeState")));
-    }
+    // if (Object.keys(this.state.currentWeather).length <= 0) {
+    //   this.setState(JSON.parse(localStorage.getItem("homeState")));
+    // }
     return (
       <div className='main'>
         <Input
@@ -75,9 +75,9 @@ class Home extends React.Component {
               />
               <div className="forecast">
 
-                <Link to="/hourly"><button width="50px" >Get Hourly Forecast</button></Link>
+                <Link to="/hourly"><button className='search-btn' >Get Hourly Forecast</button></Link>
                 
-                <Link to="/weekly"><button width="50px" >Get Weekly Forecast</button></Link> 
+                <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link> 
               </div>
             </div> 
           

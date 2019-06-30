@@ -16,7 +16,7 @@ const Input = (props) => {
             
           />
            <span role="img" aria-label="cloud">🌤️</span> 
-          <button width="50px" >Get Forecast</button>
+          <button className="search-btn" >Get Forecast</button>
           </form>
       </div>
   )
