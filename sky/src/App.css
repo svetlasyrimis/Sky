@@ -9,6 +9,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 .logo:hover {
@@ -86,9 +87,11 @@ a {
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  /* -webkit-box-shadow: 66px 10px 133px 31px rgba(0,0,0,0.68);
-  -moz-box-shadow: 66px 10px 133px 31px rgba(0,0,0,0.68);
-  box-shadow: 66px 10px 133px 31px rgba(0,0,0,0.68); */
+
+  background-color: rgba(240, 248, 255, 0.253);
+  margin: 15px;
+  padding: 10px;
+
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
   -webkit-border-radius: 72px 71px 74px 72px;

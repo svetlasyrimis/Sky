@@ -18,21 +18,6 @@ class Home extends React.Component {
     }
   }
 
-
-  dateMaker = (timestamp) => {
-    let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    let timeObject = new Date(timestamp * 1000);
-    let date = timeObject.toLocaleDateString("en-US", options)
-    // console.log(date)
-    return date
-  }
-
-  timeConverter = (timestamp) => {
-    let timeObject = new Date(timestamp * 1000);
-    let time = Object.values(timeObject.toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3"));
-    return time
-  }
-
   handleChange = (ev) => {
     this.setState({
       value: ev.target.value
@@ -59,7 +44,8 @@ class Home extends React.Component {
       flag: flag,
       hourlyWeather: hourly
     })
-    console.log("HOME: ", hourly)
+
+    localStorage.setItem("hourlyWeather", JSON.stringify(hourly));
 
     this.props.updateHourly(hourly)
 

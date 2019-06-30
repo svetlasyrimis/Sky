@@ -2,15 +2,19 @@ import React from 'react';
 
 import { uid } from 'react-uid'
 import HourlyCard from './HourlyCard'
-import Home from './Home'
 import {Route} from 'react-router-dom'
 import App from '../App';
 
 const HourlyList = (props) => {
-  console.log(props.hourlyWeather)
+  let hourly = props.hourlyWeather;
+
+  if (hourly.length <= 0) { 
+    hourly = JSON.parse(localStorage.getItem("hourlyWeather"));
+  }
+
   return (
     <div className="hourly-list">
-      {props.hourlyWeather.length > 0 ? (props.hourlyWeather).map((item) => <div key={uid(item)}>
+      {hourly.length > 0 ? (hourly).map((item) => <div key={uid(item)}>
         <HourlyCard item={item} />
       </div>
       ) : <Route
