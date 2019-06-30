@@ -1,16 +1,18 @@
 import React from 'react';
 import {dateMaker,timeConverter} from '../services/helper'
-import WeatherIcon from 'react-icons-weather'
-
+import ReactAnimatedWeather from 'react-animated-weather'
 
 const HourlyCard = (props) => {
+  let icon = props.item.icon 
+  icon = icon.toUpperCase().replace(/-/g,"_");
   return (
     <div>
       <div className='hourly-card'>
-        <WeatherIcon name="darksky"
-          iconId={props.item.icon}
-          flip="horizontal"
-          rotate="90"
+        <ReactAnimatedWeather 
+          icon={icon}
+      
+          size={128}
+          animate={true}
         />
         <p>{timeConverter(props.item.time)}</p>
         <p>{props.item.temperature}<span>&#8457;</span></p>

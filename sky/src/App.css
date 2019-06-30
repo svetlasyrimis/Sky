@@ -1,7 +1,7 @@
 .App {
   text-align: center;
 }
-/* background-image: url('./background.jpg'); */
+
 body {
   margin: 0;
   background: url('https://cdn.pixabay.com/photo/2017/05/20/20/22/clouds-2329680_960_720.jpg') no-repeat center center fixed; 
@@ -56,8 +56,10 @@ a {
   font-family: "Lucida Console", Monaco, monospace;
 }
 
-.wi {
-  font-size: 2em;
+.weather-card canvas {
+  height: 80px;
+  width: 80px;
+  align-self: center;
 }
 
 .weather-card {
@@ -66,7 +68,7 @@ a {
   letter-spacing: 0.8px;
   word-spacing: 1.2px;
   font-weight: 1.2em;;
-
+  background-color: rgba(240, 248, 255, 0.1);
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
   -webkit-border-radius: 72px 71px 74px 72px;
@@ -97,18 +99,21 @@ a {
   -webkit-border-radius: 72px 71px 74px 72px;
   border: 2px solid #000000;
 }
+
 .hourly-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .weather-box {
   margin-top: 5vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .forecast {
   display: flex;
   flex-direction: row;
