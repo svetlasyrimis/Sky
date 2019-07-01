@@ -18,7 +18,7 @@ class Home extends React.Component {
       details: []
     }
   }
-
+  
   handleChange = (ev) => {
     this.setState({
       value: ev.target.value

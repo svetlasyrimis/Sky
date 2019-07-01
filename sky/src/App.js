@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom'
-
+import {withRouter}  from 'react-router-dom'
 import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -12,7 +12,11 @@ import Summary from './components/Summary'
 
 
 class App extends React.Component {
-  
+  componentDidUpdate() {
+    window.scrollTo(0,0);
+  }
+
+
   render() {
     return (
       <div className="App">
@@ -25,19 +29,22 @@ class App extends React.Component {
 
         <Route
           path="/hourly"
-          exact render={() => <HourlyList />} />
+          exact render={() => <HourlyList />}
+          />
         
         <Route
           path="/weekly"
-          exact render={() => <WeeklyList />} />
+          exact render={() => <WeeklyList />}
+          />
 
           <Route
           path="/summary"
-          exact render={() => <Summary />} />
+          exact render={() => <Summary />}
+          />
         <Footer />
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
