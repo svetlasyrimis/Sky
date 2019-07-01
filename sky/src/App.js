@@ -9,7 +9,7 @@ import './App.css';
 import HourlyList from './components/HourlyList';
 import WeeklyList from './components/WeeklyList'
 import Summary from './components/Summary'
-
+import LocationDetails from './components/LocationDetails'
 
 class App extends React.Component {
   componentDidUpdate() {
@@ -40,6 +40,10 @@ class App extends React.Component {
           <Route
           path="/summary"
           exact render={() => <Summary />}
+        />
+        <Route
+          path="/location"
+          exact render={() => <LocationDetails />}
           />
         <Footer />
       </div>

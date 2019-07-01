@@ -4,6 +4,9 @@ import { fetchWeather, getCoordinates, getDetails } from '../services/api-helper
 import WeatherCard from './WeatherCard';
 import { Link } from 'react-router-dom';
 import {withRouter}  from 'react-router-dom'
+import LocationDetails from './LocationDetails'
+
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -15,7 +18,7 @@ class Home extends React.Component {
       location: '',
       flag: '',
       value: '',
-      details: []
+      
     }
   }
   
@@ -31,11 +34,13 @@ class Home extends React.Component {
     const response = await fetchWeather(coordinates)
     const location = await getDetails(coordinates)
     
-    console.log(location)
+    
     let flag = location.data.results[0].annotations.flag
     let exactLocation = location.data.results[0].components
-  
-  
+    let details = location.data.results[0].annotations
+    
+
+
     let current = response.currently
     let hourly = response.hourly.data
     let weekly = response.daily.data
@@ -46,15 +51,17 @@ class Home extends React.Component {
       flag: flag,
       hourlyWeather: hourly,
       weeklyWeather: weekly,
+      locationDetails: details
       
     })
     
-    // console.log(this.state.weeklyWeather)
+    console.log(this.state.locationDetails)
     localStorage.setItem("hourlyWeather", JSON.stringify(hourly));
     localStorage.setItem("weeklyWeather", JSON.stringify(weekly));
     localStorage.setItem("currentWeather", JSON.stringify(current));
     localStorage.setItem("flag", JSON.stringify(flag));
     localStorage.setItem("location", JSON.stringify(exactLocation));
+    localStorage.setItem("locationDetails", JSON.stringify(details));
     
     // this.props.updateHourly(hourly)
     // this.props.updateWeekly(weekly)
@@ -83,7 +90,9 @@ class Home extends React.Component {
 
                 <Link to="/hourly"><button className='search-btn' >Get Hourly Forecast</button></Link>
                 
-                <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link> 
+              <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link> 
+              <Link to="/location"><button className='search-btn' >Get Location Data</button></Link> 
+              {/* <LocationDetails locationData={this.state.locationDetails} /> */}
               </div>
             </div> 
           
