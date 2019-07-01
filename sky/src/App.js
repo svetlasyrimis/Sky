@@ -8,36 +8,11 @@ import './App.css';
 
 import HourlyList from './components/HourlyList';
 import WeeklyList from './components/WeeklyList'
+import Summary from './components/Summary'
+
+
 class App extends React.Component {
-
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     hourlyWeather: [],
-  //     weeklyWeather: [],
-  //     currentWeather: {}
-  //   }
-  // }
-  // updateCurrently = (object) => {
-  //   console.log("APP: ", object)
-  //   this.setState({
-  //     currentWeather: object
-  //   })
-  // }
-
-  // updateHourly = (array) => {
-  //   console.log("APP: ", array)
-  //   this.setState({
-  //     hourlyWeather: array
-  //   })
-  // }
-
-  // updateWeekly = (array) => {
-  //   console.log("APP: ", array)
-  //   this.setState({
-  //     weeklyWeather: array
-  //   })
-  // }
+  
   render() {
     return (
       <div className="App">
@@ -46,9 +21,6 @@ class App extends React.Component {
         <Route
           path="/"
           exact render={() => <Home
-            // updateHourly={this.updateHourly}
-            // updateWeekly={this.updateWeekly}
-            // updateCurrently={this.updateCurrently}
           />} />
 
         <Route
@@ -58,8 +30,10 @@ class App extends React.Component {
         <Route
           path="/weekly"
           exact render={() => <WeeklyList />} />
-        
 
+          <Route
+          path="/summary"
+          exact render={() => <Summary />} />
         <Footer />
       </div>
     );

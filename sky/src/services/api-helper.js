@@ -14,7 +14,6 @@ export const fetchWeather = async (coordinates) => {
   // TODO test with jsonp
   // https://github.com/axios/axios/blob/master/COOKBOOK.md#jsonp
   const response = await axios.get(`${proxyUrl}${baseUrl}${KEY}/${coordinates}?exclude=minutely,flags,offset`)
-  // console.log(response.data)
   return response.data
 }
 

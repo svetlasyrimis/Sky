@@ -29,7 +29,7 @@ main {
 
 header,footer {
   height: 15vh;
-  background-attachment: fixed;
+  
   opacity: 0.4;
   
   /* background: rgb(237,222,20);
@@ -53,7 +53,8 @@ AABBCA */
 	background-color:#44c767;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
-	border-radius:28px;
+  border-radius:28px;
+  margin: 10px;
 	border:1px solid #18ab29;
 	display:inline-block;
 	cursor:pointer;
@@ -71,7 +72,9 @@ AABBCA */
 	position:relative;
 	top:1px;
 }
-
+form {
+  padding: 10px;
+}
 
 footer {
   display: flex;
@@ -118,13 +121,14 @@ a {
   letter-spacing: 0.8px;
   word-spacing: 1.2px;
   font-weight: 1.2em;
-  
+  padding: 15px;
+  margin: 15px;
+  align-self: center;
   background-color: rgba(240, 248, 255, 0.1);
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
   -webkit-border-radius: 72px 71px 74px 72px;
   border: 2px solid #000000;
-  width: 30vw;
   height: 50vh;
   display: flex;
   flex-direction: column;

@@ -2,7 +2,8 @@ import React from 'react';
 import Input from './Input'
 import { fetchWeather, getCoordinates, getDetails } from '../services/api-helper'
 import WeatherCard from './WeatherCard';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import {withRouter}  from 'react-router-dom'
 
 class Home extends React.Component {
   constructor(props) {
@@ -11,11 +12,10 @@ class Home extends React.Component {
       currentWeather: {},
       hourlyWeather: [],
       weeklyWeather:[],
-      coordinates: '',
-      city: '',
+      location: '',
       flag: '',
       value: '',
-      response: []
+      details: []
     }
   }
 
@@ -31,9 +31,11 @@ class Home extends React.Component {
     const response = await fetchWeather(coordinates)
     const location = await getDetails(coordinates)
     
+    console.log(location)
     let flag = location.data.results[0].annotations.flag
     let exactLocation = location.data.results[0].components
-    
+  
+  
     let current = response.currently
     let hourly = response.hourly.data
     let weekly = response.daily.data
@@ -43,12 +45,17 @@ class Home extends React.Component {
       location: exactLocation,
       flag: flag,
       hourlyWeather: hourly,
-      weeklyWeather: weekly
+      weeklyWeather: weekly,
+      
     })
+    
     // console.log(this.state.weeklyWeather)
     localStorage.setItem("hourlyWeather", JSON.stringify(hourly));
     localStorage.setItem("weeklyWeather", JSON.stringify(weekly));
-    // localStorage.setItem("homeState", JSON.stringify(this.state));
+    localStorage.setItem("currentWeather", JSON.stringify(current));
+    localStorage.setItem("flag", JSON.stringify(flag));
+    localStorage.setItem("location", JSON.stringify(exactLocation));
+    
     // this.props.updateHourly(hourly)
     // this.props.updateWeekly(weekly)
     // this.props.updateCurrently(current)
@@ -56,11 +63,10 @@ class Home extends React.Component {
   }
   
   render() {
-    // if (Object.keys(this.state.currentWeather).length <= 0) {
-    //   this.setState(JSON.parse(localStorage.getItem("homeState")));
-    // }
+    
     return (
       <div className='main'>
+        
         <Input
           name={this.state.name}
           value={this.state.value}
@@ -89,7 +95,7 @@ class Home extends React.Component {
   }
 }
 
-export default Home
+export default withRouter(Home)
 
 
 

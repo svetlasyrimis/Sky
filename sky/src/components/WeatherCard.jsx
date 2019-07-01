@@ -4,14 +4,6 @@ import ReactAnimatedWeather from 'react-animated-weather'
 
 
 const WeatherCard = (props) => {
-  // let locationData = props.location
- 
-  // console.log(Object.values(locationData)[1])
-  
-  // if (Object.values(locationData)[1] === "USA") {
-    
-  // }
-  
   
   let icon = props.weatherData.icon 
   icon = icon.toUpperCase().replace(/-/g,"_");
