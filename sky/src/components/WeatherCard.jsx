@@ -4,12 +4,13 @@ import ReactAnimatedWeather from 'react-animated-weather'
 
 
 const WeatherCard = (props) => {
-  let locationData = props.location
-  console.log(locationData)
-  console.log(Object.values(locationData)[1])
-  if (Object.values(locationData)[1] === "USA") {
+  // let locationData = props.location
+ 
+  // console.log(Object.values(locationData)[1])
+  
+  // if (Object.values(locationData)[1] === "USA") {
     
-  }
+  // }
   
   
   let icon = props.weatherData.icon 
@@ -23,9 +24,9 @@ const WeatherCard = (props) => {
       />
       <p>{props.location.city ? props.location.city : props.location.county}, {props.location.state ? props.location.state : ""} {props.location.country} <span role="img" aria-label="flag" img="flag" id="flag"/>{props.flag}</p>
      
-      <p className="temp">{props.weatherData.temperature} <span>&#8457;</span></p>
-      <p>Feels like: {props.weatherData.apparentTemperature}</p>
-      <p>{props.weatherData.summary}</p>
+      <p className="temp">{props.weatherData.temperature}<span>&#8457;</span></p>
+      <p>Feels like: {props.weatherData.apparentTemperature}<span>&#8457;</span></p>
+      <p className="summary">{props.weatherData.summary}</p>
       <p>Humidity {Math.floor(props.weatherData.humidity * 100)} %</p>
       
       <p>Wind speed: {props.weatherData.windSpeed} mph</p>

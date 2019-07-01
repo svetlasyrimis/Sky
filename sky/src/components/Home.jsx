@@ -30,13 +30,13 @@ class Home extends React.Component {
     const coordinates = await getCoordinates(this.state.value)
     const response = await fetchWeather(coordinates)
     const location = await getDetails(coordinates)
-    console.log(location)
+    
     let flag = location.data.results[0].annotations.flag
     let exactLocation = location.data.results[0].components
-
+    
     let current = response.currently
     let hourly = response.hourly.data
-    let weekly = response.daily.data.splice(1,7)
+    let weekly = response.daily.data
     
     this.setState({
       currentWeather: current,
@@ -45,7 +45,7 @@ class Home extends React.Component {
       hourlyWeather: hourly,
       weeklyWeather: weekly
     })
-    
+    // console.log(this.state.weeklyWeather)
     localStorage.setItem("hourlyWeather", JSON.stringify(hourly));
     localStorage.setItem("weeklyWeather", JSON.stringify(weekly));
     // localStorage.setItem("homeState", JSON.stringify(this.state));

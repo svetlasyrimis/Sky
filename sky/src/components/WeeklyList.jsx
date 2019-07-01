@@ -15,8 +15,8 @@ const WeeklyList = (props) => {
       ) : <Route
           path="/"
           exact render={App} />}
-      <Link to="/hourly"><button width="50px" >Get Hourly Forecast</button></Link> 
-      <Link to="/"><button width="50px" >Get Summary</button></Link> 
+      <Link to="/hourly"><button className="search-btn" >Get Hourly Forecast</button></Link> 
+      <Link to="/"><button className="search-btn" >Get Summary</button></Link> 
     </div>
   )
 
