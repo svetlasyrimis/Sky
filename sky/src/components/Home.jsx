@@ -78,21 +78,22 @@ class Home extends React.Component {
           name={this.state.name}
           value={this.state.value}
           handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit} />
+          handleSubmit={this.handleSubmit} /> 
         <main className="weather-box">
+          
+          
           {Object.keys(this.state.currentWeather).length > 0 &&
             <div>
+                <Link to="/hourly"><button className='search-btn' >Get Hourly Forecast</button></Link>
+                
+                <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link> 
+                        
+                <Link to="/location"><button className='search-btn' >Get Location Data</button></Link>
               <WeatherCard weatherData={this.state.currentWeather}
                 location={this.state.location}
                 flag={this.state.flag}
               />
               <div className="forecast">
-
-                <Link to="/hourly"><button className='search-btn' >Get Hourly Forecast</button></Link>
-                
-              <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link> 
-              <Link to="/location"><button className='search-btn' >Get Location Data</button></Link> 
-              {/* <LocationDetails locationData={this.state.locationDetails} /> */}
               </div>
             </div> 
           

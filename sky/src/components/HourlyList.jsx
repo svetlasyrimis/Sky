@@ -8,15 +8,23 @@ const HourlyList = (props) => {
   let hourly = JSON.parse(localStorage.getItem("hourlyWeather"));
   
   return (
+    <div>
+    <div className="buttons">
+          <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link>
+                      
+          <Link to="/summary"><button className='search-btn' >Get Summary</button></Link> 
+
+          <Link to="/location"><button className='search-btn' >Get Location Info</button></Link> 
+    </div>
     <div className="hourly-list">
-      {hourly.length > 0 ? (hourly).map((item) => <div key={uid(item)}>
+     
+      {hourly.length > 0 ? (hourly).map((item) => <div  key={uid(item)}>
         <HourlyCard item={item} />
       </div>
       ) : <Route
           path="/"
           exact render={App} />}
-      <Link to="/weekly"><button className="search-btn">Get Weekly Forecast</button></Link>
-      <Link to="/summary"><button className="search-btn">Get Summary</button></Link>
+      </div>
     </div>
   )
 }

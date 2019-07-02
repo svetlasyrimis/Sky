@@ -34,13 +34,15 @@ class Summarry extends React.Component {
       
       <div className='weather-box'>
         <div>
+          <Link to="/hourly"><button className='search-btn' >Get Hourly Forecast</button></Link>
+                    
+          <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link> 
+
+          <Link to="/location"><button className='search-btn' >Get Location Info</button></Link>
             <WeatherCard weatherData={current}
             location={location}
               flag={flag} />
-            <Link to="/hourly"><button className='search-btn' >Get Hourly Forecast</button></Link>
-                    
-          <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link> 
-          {/* <Link to="/location"><button className='search-btn' >Location Details</button></Link>  */}
+         
         </div>
       </div>
       

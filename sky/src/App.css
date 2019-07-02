@@ -17,37 +17,32 @@ main {
   overflow: scroll;
 }
 
- hr {
+hr {
   border-style: solid;
   border-color: cornflowerblue;
   width:20vw;
- }
+}
+
 .logo:hover {
-	background-color: blue
-	/* barbel colors: green #9CC055,blue #399CE9; yellow; #FFE633; */
+	background-color: #031337;
 }
 
 header,footer {
   height: 15vh;
-  
-  opacity: 0.4;
-  
-  /* background: rgb(237,222,20);
-background: radial-gradient(circle, rgba(237,222,20,1) 23%, rgba(0,212,255,1) 100%); */
-  background-color: #278CCB
-  
-  /* opacity: 0.5; */
+  background-color: #278ccb2b
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-self: flex-end;
 }
 
-/* 031337
-366A90
-707F92
-8FABCB
-CCC8BF
-AABBCA */
-.main {
-  height: auto;
+a {
+  align-self: center;
 }
+
 
 .search-btn {
 	background-color:#44c767;
@@ -72,20 +67,11 @@ AABBCA */
 	position:relative;
 	top:1px;
 }
+
+
+
 form {
   padding: 10px;
-}
-
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-self: flex-end;
-}
-
-a {
-  align-self: center;
 }
 
 .sun {
@@ -137,7 +123,11 @@ a {
   -moz-box-shadow: 66px 10px 133px 31px rgba(0,0,0,0.68);
   box-shadow: 66px 10px 133px 31px rgba(0,0,0,0.68);
 }
-
+.buttons {
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .hourly-card {
   width: 20vw;
   height: 20vh;
@@ -173,12 +163,18 @@ a {
   -webkit-border-radius: 72px 71px 74px 72px;
   border: 2px solid #000000;
 }
+.weekday-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .weekly-list {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
+  align-self: center;
 
 }
 .hourly-list {
@@ -193,6 +189,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 
 .forecast {
@@ -228,6 +225,7 @@ and (max-width: 600px) {
   
   .daily-card {
     max-width: 90%;
+    
   }
 
   .hourly-card {
