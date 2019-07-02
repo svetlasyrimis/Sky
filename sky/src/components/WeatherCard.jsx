@@ -8,7 +8,7 @@ const WeatherCard = (props) => {
   let icon = props.weatherData ? props.weatherData.icon : '';
   icon = icon.toUpperCase().replace(/-/g, "_");
   return (
-    <div className="weather-card flex-center-column">
+    <div className="weather-card flex-center-column card">
       {props.weatherData ?
         <>
           <ReactAnimatedWeather

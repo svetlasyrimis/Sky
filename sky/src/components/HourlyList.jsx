@@ -16,7 +16,7 @@ const HourlyList = (props) => {
 
           <Link to="/location"><button className='search-btn' >Get Location Info</button></Link> 
     </div>
-    <div className="hourly-list">
+    <div className="flex-center-row">
      
       {hourly.length > 0 ? (hourly).map((item) => <div  key={uid(item)}>
         <HourlyCard item={item} />

@@ -104,7 +104,16 @@ hr {
 form {
   padding: 10px;
 }
-
+input[type=text] {
+  width: 30%;
+  padding: 8px 8px;
+  border-radius: 30px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 18px;
+  font-weight: bold;
+}
 
 #symbol {
   padding:10px;
@@ -116,57 +125,71 @@ form {
   font-size: 1.4em;
   font-family: "Lucida Console", Monaco, monospace;
 }
-.weather-details {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  
-  
-}
+
 .weather-card canvas {
-  height: 80px;
-  width: 80px;
+  /* height: 80px;
+  width: 80px; */
   align-self: center;
 }
-
-.hourly-card canvas {
+.weather-card canvas, .hourly-card canvas {
   height: 80px;
-  width: 80px;
+  width: 90px;
 }
-.error-card {
-  background-color: rgba(240, 248, 255, 0.1);
+.hourly-card canvas {
+  /* height: 80px;
+  width: 80px; */
+}
+/* repeating properties for all cards go here  */
+.card {
+  border-radius: 72px 71px 74px 72px;
+  -moz-border-radius: 72px 71px 74px 72px;
+  -webkit-border-radius: 72px 71px 74px 72px;
+
+  
+  border: 2px solid #000000;
+
+  color:black;
+  padding: 15px;
+  margin: 15px;
+
+  -webkit-box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
+  -moz-box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
+  box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
+}
+.top-card {
+  /* background-color: rgba(240, 248, 255, 0.1); */
+  /* common for error card and current loc card  */
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
   -webkit-border-radius: 72px 71px 74px 72px;
   background-color: rgba(240, 248, 255, 0.5);
   border: 2px solid #000000;
-  font-size: 26px;
   color:black;
+  
+  font-size: 26px;
   font-weight: bold;
   height: 15vh;
   width: 60vw;
 }
 
 .weather-card {
-  display: flex;
-  color: black;
   line-height: 0.4em;
   letter-spacing: 0.8px;
   word-spacing: 1.2px;
   font-size: 1.2em;
+  height: 50vh;
+  background-color: rgba(240, 248, 255, 0.1);
   
-  padding: 15px;
+  /* padding: 15px;
   margin: 15px;
   
   background-color: rgba(240, 248, 255, 0.1);
-  
+  color: black;
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
   -webkit-border-radius: 72px 71px 74px 72px;
-  border: 2px solid #000000;
+  border: 2px solid #000000; */
   
-  height: 50vh;
 
   /* display: flex;
   flex-direction: column;
@@ -174,9 +197,9 @@ form {
   /* align-self: center; */ 
 
 
-  -webkit-box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
+  /* -webkit-box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
   -moz-box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
-  box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
+  box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68); */
 }
 .buttons {
   display:flex;
@@ -187,41 +210,47 @@ article {
   padding: 5px;
 }
 .hourly-card {
-  width: 20vw;
+  width: 15vw;
   height: 20vh;
+
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
 
   background-color: rgba(240, 248, 255, 0.253);
-  margin: 15px;
-  padding: 10px;
+  font-size: 18px;
+  /* margin: 15px;
+  padding: 15px;
 
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
   -webkit-border-radius: 72px 71px 74px 72px;
-  border: 2px solid #000000;
+  border: 2px solid #000000; */
 }
 .daily-card {
-  color: black;
-  line-height: 0.5em;
+  
+
+  /* line-height: 0.5em; */
   letter-spacing: 0.8px;
   word-spacing: 1.2px;
   font-weight: 1.2em;
   /* background-color: rgba(240, 248, 255, 0.253); */
   background-color: rgba(240, 248, 255, 0.378);
   backdrop-filter: blur;
-  margin: 15px;
-  padding: 10px;
-  width: 30vw;
+  font-size: 20px;
+  font-weight: bold;
+  /* width: 30vw; */
 
+  /* margin: 15px;
+  padding: 10px;
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
   -webkit-border-radius: 72px 71px 74px 72px;
   border: 2px solid #000000;
+  color: black; */
 }
-.weekday-wrap {
+/* .weekday-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -231,23 +260,22 @@ article {
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  align-items: center;
-  align-self: center;
+  
 
-}
-.hourly-list {
+} */
+/* .hourly-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
 
 .weather-box {
   margin-top: 5vh;
-  display: flex;
+  /* display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: column; */
 }
 
 .forecast {
@@ -258,16 +286,15 @@ article {
   justify-content: center;
 }
 
-input[type=text] {
-  width: 30%;
-  padding: 8px 8px;
-  border-radius: 30px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 18px;
-  font-weight: bold;
-}
+
+
+
+
+
+
+
+
+
 
 /* Iphone X and Pixel 2 */
 @media only screen

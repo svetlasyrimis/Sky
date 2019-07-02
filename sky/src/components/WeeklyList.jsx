@@ -8,13 +8,13 @@ const WeeklyList = (props) => {
   let weekly = JSON.parse(localStorage.getItem("weeklyWeather"));
   
   return (
-    <div className="weekly-list">
+    <div className="flex-center-column">
       <div>
               <Link to="/hourly"><button className="search-btn" >Get Hourly Forecast</button></Link> 
               <Link to="/summary"><button className="search-btn" >Right Now</button></Link> 
               <Link to="/location"><button className="search-btn" >Get Location Info</button></Link> 
         </div>
-      {weekly.length > 0 ? (weekly).map((item) => <div className='weekday-wrap' key={uid(item)}>
+      {weekly.length > 0 ? (weekly).map((item) => <div className='flex-center-column' key={uid(item)}>
     
           <WeeklyCard item={item} />
       </div>

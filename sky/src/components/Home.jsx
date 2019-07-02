@@ -136,7 +136,7 @@ class Home extends React.Component {
         <Error error={this.state.errorMessage} />
         <CurrentLocation address={this.state.address}
           suburb={this.state.suburb}/>
-        <main className="weather-box">
+        <main className="weather-box flex-center-column">
         
           
           {Object.keys(this.state.currentWeather).length > 0 &&

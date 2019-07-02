@@ -7,7 +7,7 @@ const HourlyCard = (props) => {
   icon = icon.toUpperCase().replace(/-/g,"_");
   return (
     <div>
-      <div className='hourly-card'>
+      <div className='hourly-card card'>
         <ReactAnimatedWeather 
           icon={icon}
       

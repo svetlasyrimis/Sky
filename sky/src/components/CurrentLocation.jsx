@@ -6,8 +6,8 @@ const CurrentLocation = props => {
       
       {props.address ?
         <>
-          <div className='error-card'>
-            <p>Your approximate location is {props.address},{props.suburb}</p></div>
+          <div className='top-card'>
+            <p>Your approximate location is {props.address}.You are in {props.suburb}.</p></div>
         </> : ''}
     </div>
   )

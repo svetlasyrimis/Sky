@@ -32,7 +32,7 @@ class Summarry extends React.Component {
 
     return (
       
-      <div className='weather-box'>
+      <div className='weather-box flex-center-column'>
         <div>
           <Link to="/hourly"><button className='search-btn' >Get Hourly Forecast</button></Link>
                     

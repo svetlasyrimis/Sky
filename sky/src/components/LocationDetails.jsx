@@ -7,7 +7,7 @@ const LocationDetails = props => {
   let locationDet = JSON.parse(localStorage.getItem("locationDetails"))
 
   return (
-    <div className="weather-box">
+    <div className="weather-box flex-center-column">
       <div className="buttons">
         <Link to="/hourly"><button className='search-btn' >Get Hourly Forecast</button></Link>
 
@@ -18,7 +18,7 @@ const LocationDetails = props => {
 
       {
         Object.keys(locationDet).length > 0 &&
-        <div className="weather-card flex-center-column">
+        <div className="weather-card flex-center-column card">
 
           <h4>Timezone: {locationDet.timezone.name}</h4>
           <p>Currency: {" "}
