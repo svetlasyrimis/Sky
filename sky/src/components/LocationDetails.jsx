@@ -18,9 +18,9 @@ const LocationDetails = props => {
 
       {
         Object.keys(locationDet).length > 0 &&
-        <div className="weather-card">
+        <div className="weather-card flex-center-column">
 
-          <p>Timezone {locationDet.timezone.name}</p>
+          <h4>Timezone: {locationDet.timezone.name}</h4>
           <p>Currency: {" "}
             "{locationDet.currency.name}"    {locationDet.currency.disambiguate_symbol}</p>
           <p> Subunit {locationDet.currency.subunit}</p>
