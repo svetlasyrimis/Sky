@@ -2,7 +2,6 @@ export const dateMaker = timestamp => {
   let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   let timeObject = new Date(timestamp * 1000);
   let date = timeObject.toLocaleDateString("en-US", options)
-  // console.log(date)
   return date
 }
 
@@ -16,7 +15,6 @@ export const weekdayMaker = timestamp => {
   let options = { weekday: 'short' };
   let timeObject = new Date(timestamp * 1000);
   let weekday = timeObject.toLocaleDateString("en-US", options)
-  // console.log(date)
   return weekday
 }
 

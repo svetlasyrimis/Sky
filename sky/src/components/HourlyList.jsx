@@ -12,7 +12,7 @@ const HourlyList = (props) => {
     <div className="buttons">
           <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link>
                       
-          <Link to="/summary"><button className='search-btn' >Get Summary</button></Link> 
+          <Link to="/summary"><button className='search-btn' >Right now</button></Link> 
 
           <Link to="/location"><button className='search-btn' >Get Location Info</button></Link> 
     </div>

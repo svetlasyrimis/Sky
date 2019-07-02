@@ -1,5 +1,30 @@
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important; 
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important; 
+  outline: none !important;
+} 
+
 .App {
   text-align: center;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.flex-center-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items:center;
+  
+}
+.flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
 }
 
 body {
@@ -10,7 +35,21 @@ body {
   -o-background-size: cover;
   background-size: cover;
   background-attachment: fixed;
+
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
 }
+
+header,footer {
+  height: 15vh;
+  background-color: #278ccb2b
+}
+
 
 main {
   min-height: 60vh;
@@ -22,72 +61,56 @@ hr {
   border-color: cornflowerblue;
   width:20vw;
 }
-
+.logo {
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+  padding: 10px;
+}
 .logo:hover {
-	background-color: #031337;
+  background-color: #f8ffb657;
+  
 }
-
-header,footer {
-  height: 15vh;
-  background-color: #278ccb2b
-}
-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-content: center;
-  align-self: flex-end;
-}
-
-a {
-  align-self: center;
-}
-
 
 .search-btn {
-	background-color:#44c767;
+  background-color:#44c767;
+  
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
   border-radius:28px;
+  border:1px solid #18ab29;
+
   margin: 10px;
-	border:1px solid #18ab29;
-	display:inline-block;
-	cursor:pointer;
+  padding:16px 31px;
+
+  cursor:pointer;
+
 	color:#1a0707;
 	font-family:Arial;
 	font-size:17px;
-	padding:16px 31px;
-	text-decoration:none;
 	text-shadow:0px 1px 0px #2f6627;
 }
+
 .search-btn:hover {
 	background-color:#5cbf2a;
 }
+
 .search-btn:active {
-	position:relative;
-	top:1px;
+  background-color:#8dd16b;
 }
-
-
 
 form {
   padding: 10px;
 }
 
-.sun {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-#symbol,h3 {
+
+#symbol {
   padding:10px;
-  align-self: center;
   font-size: 26px;
-  font-weight: bolder;
+  font-weight: 900;
 }
 
-.temp {
+.temperature {
   font-size: 1.4em;
   font-family: "Lucida Console", Monaco, monospace;
 }
@@ -97,31 +120,41 @@ form {
   width: 80px;
   align-self: center;
 }
+
 .hourly-card canvas {
   height: 80px;
   width: 80px;
 }
+
+
 .weather-card {
   color: black;
   line-height: 0.5em;
   letter-spacing: 0.8px;
   word-spacing: 1.2px;
   font-weight: 1.2em;
+  
   padding: 15px;
   margin: 15px;
-  align-self: center;
+  
   background-color: rgba(240, 248, 255, 0.1);
+  
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
   -webkit-border-radius: 72px 71px 74px 72px;
   border: 2px solid #000000;
+  
   height: 50vh;
-  display: flex;
+
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  -webkit-box-shadow: 66px 10px 133px 31px rgba(0,0,0,0.68);
-  -moz-box-shadow: 66px 10px 133px 31px rgba(0,0,0,0.68);
-  box-shadow: 66px 10px 133px 31px rgba(0,0,0,0.68);
+  align-self: center; */
+
+
+  -webkit-box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
+  -moz-box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
+  box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
 }
 .buttons {
   display:flex;

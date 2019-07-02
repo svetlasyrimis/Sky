@@ -16,7 +16,8 @@ const HourlyCard = (props) => {
         />
         
         <p>{weekdayMaker(props.item.time)} {timeConverter(props.item.time)}</p>
-        <p className="temp">{props.item.temperature}<span>&#8457;</span></p>
+        
+        <p className="temperature">{props.item.temperature}<span>&#8457;</span></p>
         
         
         </div>   
