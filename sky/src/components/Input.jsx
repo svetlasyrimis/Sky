@@ -13,7 +13,7 @@ const Input = (props) => {
             placeholder="Search for Location"
           />
            <span role="img" aria-label="cloud">🌤️</span> 
-          <button className="search-btn" >Get Forecast</button>
+          <button className="search-btn" id='forecast' >Get Forecast</button>
           </form>
       </div>
   )

@@ -35,14 +35,6 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-attachment: fixed;
-
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* font-family: 'Exo 2', sans-serif; */
   font-family: 'Questrial', sans-serif;
 }
 
@@ -75,31 +67,32 @@ hr {
 }
 
 .search-btn {
-  background-color:#44c767;
-  
+  background: none;
+  border: none;
 	-moz-border-radius:28px;
 	-webkit-border-radius:28px;
   border-radius:28px;
-  border:1px solid #18ab29;
+  
 
   margin: 10px;
   padding:16px 31px;
 
   cursor:pointer;
   min-height: 100%;
-
-	color:#1a0707;
-	font-family:Arial;
-	font-size:17px;
-	text-shadow:0px 1px 0px #2f6627;
+  color: white;
+	
+	font-family: Questrial;
+  font-size:20px;
+  font-weight: bolder;
+	text-shadow:0px 1px 0px #1c3e70;
 }
 
 .search-btn:hover {
-	background-color:#5cbf2a;
+	background-color: #3f739465
 }
 
 .search-btn:active {
-  background-color:#8dd16b;
+  background-color:#0c3c5c;
 }
 
 form {
@@ -154,7 +147,7 @@ footer p {
   color:black;
   padding: 15px;
   margin: 15px;
-
+  
   -webkit-box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
   -moz-box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
   box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
@@ -167,8 +160,8 @@ footer p {
   background-color: rgba(240, 248, 255, 0.5);
   border: 2px solid #000000;
   color:black;
-  padding: 10px;
-  font-size: 26px;
+  padding: 5px;
+  font-size: 20px;
   font-weight: bold;
   
   width: 60vw;
@@ -178,12 +171,16 @@ footer p {
 .error-card {
   background-color:#fbff00b8;
 }
+#forecast {
+  background-color: darkkhaki;
+  border: 1px solid yellow;
+  color: black;
 
+}
 .weather-card {
-  line-height: 0.4em;
   letter-spacing: 0.8px;
-  word-spacing: 1.2px;
-  font-size: 1.2em;
+  word-spacing: 1.8px;
+  font-size: 1.4em;
   font-weight: bold;
   background-color: rgba(240, 248, 255, 0.1);
   min-width: 60vw;
@@ -218,9 +215,13 @@ footer p {
   backdrop-filter: blur;
   font-size: 20px;
   font-weight: bold;
-  min-width: 400px;
+  min-width: 420px;
+  
 }
+.summary-card {
+  background-color: rgba(240, 248, 255, 0.255) !important;
 
+}
 .weather-box {
   min-height: 70vh;
 }
@@ -247,28 +248,43 @@ footer p {
 }
 
 .weekly-list::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-  background-color: rgb(151, 239, 255);
+  background-color: #396286;
   border-radius: 20px;
 }
 
 .weekly-list::-webkit-scrollbar-thumb:horizontal {
-background-color: rgb(32, 46, 248);
+background-color: #042957;
 outline: 1px solid rgb(32, 46, 248);
 border-radius: 20px;
 }
 
-
 /* Iphone X and Pixel 2 */
 @media only screen
 and (max-width: 600px) {
+  
   .daily-card {
     min-width: 80vw;
   }
-
+  .search-btn {
+    padding: 10px;
+  }
   .hourly-card canvas {
-    height: 65px;
-    width: 65px;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .hourly-card {
+    height: 20vh;
+    width: 40vw;
+    align-content: space-evenly;
+    line-height: 2px;
+    
+  }
+  .hourly-list {
+    flex-wrap: nowrap
+  }
+  input[type=text] {
+    width: auto;
   }
 }
 
@@ -277,7 +293,9 @@ and (max-width: 600px) {
 and (min-width: 601px) {
 	.header {
 		height: 70px;
-	}
+  }
+  
+  
 }
 
 /* Galaxy Note 9 */
@@ -291,6 +309,14 @@ and (min-height: 700px) {
     width: 70px;
     height: 70px;
     margin: 20px
+
+  }
+  .search-btn {
+    padding: 10px;
+    font-size:17px;
+  }
+  weekly-list {
+    height: 80vh;
 
   }
 }
@@ -310,31 +336,68 @@ and (max-width: 320px) {
   .daily-card img {
     margin: 5px;
   }
+  .search-btn {
+    padding: 10px;
+    font-size:17px;
+  }
 }
 
 @media screen
 and (max-width: 420px)
 and (min-height: 800px) {
+  
   .daily-card {
     min-width: 80vw;
   }
   .daily-card img,canvas {
-    height:40px;
-    width: 40px;
+    height: 80px;
+    width: 80px;
+  }
+  .search-btn {
+    padding: 10px;
+    font-size:17px;
   }
 }
 @media only screen 
   and (min-width: 768px) 
-  and (max-width: 1024px) 
+  and (max-width: 1340px) 
   and (-webkit-min-device-pixel-ratio: 2) {
+    
     .daily-card,.weather-card {
-      min-width: 80vw;
+      min-width: 40vw; 
+      
+    }
+    .daily-card canvas {
+      height: 80px;
     }
     .daily-card img {
       width: 70px;
       height: 70px;
       margin: 20px
     }
+    .weekly-list {
+      height: 80vh;
+    }
+    
+    
 
+}
+
+@media only screen 
+  and (min-width: 1024px) 
+  and (max-height: 1366px) 
+  and (-webkit-min-device-pixel-ratio: 1.5) {
+    .weekly-list {
+      height: 80vh;
+    }
+    .daily-card {
+      min-width: 40vw; 
+      max-height: 60vh;
+    }
+    
+    .hourly-card {
+      min-height: 10vh;
+      max-width: 20vh; 
+    }
 }
 

@@ -21,11 +21,11 @@ const WeeklyCard = (props) => {
       <p>Wind speed: {props.item.windSpeed} mph</p>
       <div className="flex-center-row">
       <div>
-        <img src='./images/sunrise.png' alt="sunrise" />
+        <img src='./images/sunrise.png' alt="sunrise" className='sun-position'/>
           <p>{timeConverter(props.item.sunriseTime)}</p>
         </div>
       <div>
-          <img src='./images/sunset.png' alt="sunset" />
+          <img src='./images/sunset.png' alt="sunset" className='sun-position'/>
           <p> {timeConverter(props.item.sunsetTime)} </p>
       </div>
       </div>
