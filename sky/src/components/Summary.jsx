@@ -1,9 +1,5 @@
 import React from 'react'
 import WeatherCard from './WeatherCard'
-import { Link } from 'react-router-dom'
-
-
-
 
 class Summarry extends React.Component {
   constructor() {
@@ -14,6 +10,7 @@ class Summarry extends React.Component {
       flag: null
     }
   }
+
   componentDidMount() {
     let current = JSON.parse(localStorage.getItem("currentWeather"))
     let location = JSON.parse(localStorage.getItem("location"))
@@ -24,20 +21,15 @@ class Summarry extends React.Component {
       flag
     })
   }
-
-
-
+  
   render() {
     const { current, location, flag } = this.state;
-
     return (
-
       <div className='weather-box flex-center-column'>
         <WeatherCard weatherData={current}
           location={location}
           flag={flag} />
       </div>
-
     )
   }
 }

@@ -20,6 +20,7 @@
   align-items:center;
   
 }
+
 .flex-center-column {
   display: flex;
   flex-direction: column;
@@ -36,8 +37,6 @@ body {
   background-size: cover;
   background-attachment: fixed;
 
-
-
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -52,7 +51,6 @@ header,footer {
   background-color: #278ccb2b
 }
 
-
 main {
   min-height: 60vh;
   overflow: scroll;
@@ -63,12 +61,14 @@ hr {
   border-color: cornflowerblue;
   width:20vw;
 }
+
 .logo {
   border-radius: 50%;
   height: 60px;
   width: 60px;
   padding: 10px;
 }
+
 .logo:hover {
   background-color: #f8ffb657;
   
@@ -105,6 +105,7 @@ hr {
 form {
   padding: 10px;
 }
+
 input[type=text] {
   width: 30%;
   padding: 8px 8px;
@@ -137,18 +138,17 @@ footer p {
 .weather-card canvas {
   align-self: center;
 }
+
 .weather-card canvas, .hourly-card canvas {
   height: 90px;
   width: 90px;
 }
-
 
 .card {
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
   -webkit-border-radius: 72px 71px 74px 72px;
 
-  
   border: 2px solid #000000;
 
   color:black;
@@ -205,8 +205,8 @@ footer p {
   background-color: rgba(240, 248, 255, 0.253);
   font-size: 22px;
   width: 280px;
-  
 }
+
 .daily-card {
   box-shadow: 7px 6px 6px 7px rgba(0,0,0,0.68);
 
@@ -241,6 +241,7 @@ footer p {
   align-items: stretch;
 
 } 
+
 .weekly-list::-webkit-scrollbar {
   height: 2em;
 }
@@ -261,19 +262,14 @@ border-radius: 20px;
 /* Iphone X and Pixel 2 */
 @media only screen
 and (max-width: 600px) {
-
-  
   .daily-card {
     min-width: 80vw;
-    
   }
-
 
   .hourly-card canvas {
     height: 65px;
     width: 65px;
   }
-
 }
 
 /* Desktop/Laptop/Tablet */

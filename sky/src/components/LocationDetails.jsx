@@ -1,14 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { capitalize } from '../services/helper'
-
 
 const LocationDetails = props => {
   let locationDet = JSON.parse(localStorage.getItem("locationDetails"))
 
   return (
     <div className="weather-box flex-center-column">
-
       {
         Object.keys(locationDet).length > 0 &&
         <div className="weather-card flex-center-column card">

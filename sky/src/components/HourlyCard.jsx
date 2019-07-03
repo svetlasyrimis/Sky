@@ -9,23 +9,17 @@ const HourlyCard = (props) => {
   let weekday = weekdayMaker(props.item.time) + " " + timeConverter(props.item.time)
   
   return (
-
     <div className='hourly-card card'>
       <div>
         <ReactAnimatedWeather
           icon={icon}
-
           size={128}
           animate={true}
         />
-
         <p>{weekday}</p>
       </div>
       <p className="temperature">{props.item.temperature}<span>&#8457;</span></p>
-
-
     </div>
-
   )
 }
 

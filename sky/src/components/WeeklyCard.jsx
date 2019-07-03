@@ -1,5 +1,4 @@
 import React from 'react';
-
 import ReactAnimatedWeather from 'react-animated-weather'
 import {dateMaker,timeConverter} from '../services/helper'
 
@@ -31,9 +30,7 @@ const WeeklyCard = (props) => {
       </div>
       </div>
     </div>
-
   )
-
 }
 
 export default WeeklyCard

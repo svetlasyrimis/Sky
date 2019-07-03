@@ -2,14 +2,9 @@ import React from 'react';
 import Input from './Input'
 import { fetchWeather, getCoordinates, getDetails } from '../services/api-helper'
 import WeatherCard from './WeatherCard';
-
-import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
 import Error from './Error'
 import CurrentLocation from './CurrentLocation'
-
-
-
 
 class Home extends React.Component {
   constructor(props) {
@@ -95,7 +90,6 @@ class Home extends React.Component {
   }
 
   render() {
-
     return (
       <div className='main'>
 
@@ -115,18 +109,13 @@ class Home extends React.Component {
         <main className="weather-box flex-center-column">
 
           {Object.keys(this.state.currentWeather).length > 0 &&
-
-
               <WeatherCard weatherData={this.state.currentWeather}
                 location={this.state.location}
                 flag={this.state.flag}
               />
-
-
           }
         </main>
       </div>
-
     )
   }
 }

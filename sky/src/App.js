@@ -5,7 +5,6 @@ import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import './App.css';
-
 import HourlyList from './components/HourlyList';
 import WeeklyList from './components/WeeklyList'
 import Summary from './components/Summary'
