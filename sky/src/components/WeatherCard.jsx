@@ -17,7 +17,7 @@ const WeatherCard = (props) => {
             animate={true}
           />
           
-          <article className='flex-center-row'>{props.location.city ? props.location.city : props.location.county},{props.location.state ? props.location.state : ""} {props.location.country}<span role="img" aria-label="flag" img="flag" id="flag" />{props.flag} </article> 
+          <p className='flex-center-row'>{props.location.city ? props.location.city : props.location.county},{props.location.state ? props.location.state : ""} {props.location.country}<span role="img" aria-label="flag" img="flag" id="flag" />{props.flag} </p> 
           
           
             

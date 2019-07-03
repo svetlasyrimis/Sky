@@ -24,30 +24,22 @@ class Summarry extends React.Component {
       flag
     })
   }
-  
+
 
 
   render() {
     const { current, location, flag } = this.state;
 
     return (
-      
-      <div className='weather-box flex-center-column'>
-        <div>
-          <Link to="/hourly"><button className='search-btn' >Get Hourly Forecast</button></Link>
-                    
-          <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link> 
 
-          <Link to="/location"><button className='search-btn' >Get Location Info</button></Link>
-            <WeatherCard weatherData={current}
-            location={location}
-              flag={flag} />
-         
-        </div>
+      <div className='weather-box flex-center-column'>
+        <WeatherCard weatherData={current}
+          location={location}
+          flag={flag} />
       </div>
-      
+
     )
-   }
+  }
 }
 
 export default Summarry

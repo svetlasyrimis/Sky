@@ -19,12 +19,8 @@ export const fetchWeather = async (coordinates) => {
 
 
 export const getCoordinates = async (string) => {
-  // URLify(string) or encodeURL()not needed, still wonder why 
-  // TODO - show a map 
   const response = await axios.get(`${baseUrl2}${string}&key=${API_KEY}&language=en&pretty=1`)
   let coordinates = Object.values(response.data.results[0].geometry).join()
-  
-  // console.log(coordinates)
   return coordinates
 }
 
@@ -32,6 +28,7 @@ export const getDetails = async (string) => {
   // URLify(string);
   const response = await axios.get(`${baseUrl2}${string}&key=${API_KEY}&language=en&pretty=1`)
   // let location = response.data.results[0].formatted
+  console.log(response)
   return response
 }
 

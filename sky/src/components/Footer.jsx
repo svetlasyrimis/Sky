@@ -6,7 +6,7 @@ export default class Footer extends React.Component {
     return (
         
       <footer className='flex-center-row'>
-        <h4>Powered by </h4>
+        <p>Powered by</p>
           <a href="https://darksky.net/forecast/40.7127,-74.0059/us12/en" target='blank'><img className='logo'src="/images/darkskylogo-transparent.png" alt="darksky-logo" width="80px" height="60px"></img></a>
           <p id="symbol">&amp;</p>
         

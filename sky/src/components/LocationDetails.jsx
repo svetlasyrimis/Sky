@@ -8,13 +8,6 @@ const LocationDetails = props => {
 
   return (
     <div className="weather-box flex-center-column">
-      <div className="buttons">
-        <Link to="/hourly"><button className='search-btn' >Get Hourly Forecast</button></Link>
-
-        <Link to="/weekly"><button className='search-btn' >Get Weekly Forecast</button></Link>
-
-        <Link to="/summary"><button className='search-btn' >Right Now</button></Link>
-      </div>
 
       {
         Object.keys(locationDet).length > 0 &&

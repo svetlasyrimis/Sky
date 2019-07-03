@@ -8,12 +8,8 @@ const WeeklyList = (props) => {
   let weekly = JSON.parse(localStorage.getItem("weeklyWeather"));
   
   return (
-    <div className="flex-center-column">
-      <div>
-              <Link to="/hourly"><button className="search-btn" >Get Hourly Forecast</button></Link> 
-              <Link to="/summary"><button className="search-btn" >Right Now</button></Link> 
-              <Link to="/location"><button className="search-btn" >Get Location Info</button></Link> 
-      </div>
+    
+     
       <div className='flex-center-row weekly-list'>
         {weekly.length > 0 ? (weekly).map((item) => 
       
@@ -23,7 +19,7 @@ const WeeklyList = (props) => {
             path="/"
               exact render={App} />}
       </div>
-    </div>
+    
   )
 
 }

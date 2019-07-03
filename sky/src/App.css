@@ -122,6 +122,12 @@ input[type=text] {
   font-weight: 900;
 }
 
+footer p {
+  padding:10px;
+  font-size: 1.3em;
+  font-weight: 900;
+}
+
 .temperature {
   font-size: 1.4em;
   font-family: "Lucida Console", Monaco, monospace;
@@ -132,7 +138,7 @@ input[type=text] {
   align-self: center;
 }
 .weather-card canvas, .hourly-card canvas {
-  height: 80px;
+  height: 90px;
   width: 90px;
 }
 
@@ -153,8 +159,8 @@ input[type=text] {
   -moz-box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
   box-shadow: 21px 18px 28px 21px rgba(0,0,0,0.68);
 }
+
 .top-card {
- 
   border-radius: 72px 71px 74px 72px;
   -moz-border-radius: 72px 71px 74px 72px;
   -webkit-border-radius: 72px 71px 74px 72px;
@@ -168,9 +174,11 @@ input[type=text] {
   width: 60vw;
   margin: 15px;
 }
+
 .error-card {
   background-color:#fbff00b8;
 }
+
 .weather-card {
   line-height: 0.4em;
   letter-spacing: 0.8px;
@@ -178,15 +186,15 @@ input[type=text] {
   font-size: 1.2em;
   font-weight: bold;
   background-color: rgba(240, 248, 255, 0.1);
+  min-width: 60vw;
 }
+
 .buttons {
   display:flex;
   flex-direction: row;
   justify-content: center;
 }
-article {
-  padding: 5px;
-}
+
 .hourly-card {
   display: flex;
   flex-direction: row;
@@ -202,8 +210,6 @@ article {
 .daily-card {
   box-shadow: 7px 6px 6px 7px rgba(0,0,0,0.68);
 
-
-
   letter-spacing: 0.8px;
   word-spacing: 1.2px;
   font-weight: 1.2em;
@@ -216,8 +222,7 @@ article {
 }
 
 .weather-box {
-  margin-top: 5vh;
-  
+  min-height: 70vh;
 }
 
 .forecast {
@@ -237,47 +242,33 @@ article {
 
 } 
 .weekly-list::-webkit-scrollbar {
-  height: 5em;
+  height: 2em;
 }
 
 .weekly-list::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: rgb(151, 239, 255);
+  border-radius: 20px;
 }
 
 .weekly-list::-webkit-scrollbar-thumb:horizontal {
-background-color: darkgrey;
-outline: 1px solid slategrey;
+background-color: rgb(32, 46, 248);
+outline: 1px solid rgb(32, 46, 248);
+border-radius: 20px;
 }
-
-
-
-
 
 
 /* Iphone X and Pixel 2 */
 @media only screen
 and (max-width: 600px) {
-	/* .footer {
-		display: block;
-		text-align: center;
-		min-height: 20vh;
-		margin-top: 40px;
-		bottom: 0;
-		padding-bottom: 10px;
-	} */
+
   
   .daily-card {
     min-width: 80vw;
     
   }
 
-  /* .hourly-card {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  } */
+
   .hourly-card canvas {
     height: 65px;
     width: 65px;
