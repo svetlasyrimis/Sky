@@ -6,8 +6,6 @@ import WeeklyCard from './WeeklyCard'
 
 const WeeklyList = (props) => {
   let weekly = JSON.parse(localStorage.getItem("weeklyWeather"));
-
-
   return (
     <div className='flex-center-row weekly-list'>
       {(weekly && weekly.length) ? (weekly).map((item) =>

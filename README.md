@@ -6,15 +6,21 @@ Weather web app built with React.js
 
 Sky is a location-aware weather web app that displays weather forecast as a short summary with the option to get more detailed information about the forecast in different formats(currently, hourly, daily).
 
+[View website](https://skyproject.surge.sh/)
+
 ## Wireframes
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
 
+### Instructions
+- Fork and clone this repo
+- Run ```npm i```
+- Start the server with ```npm start``` 
+
 ## MVP / PostMVP
+ 
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
-### MVP
+### MVP 
 - Use [OpenCage API](https://opencagedata.com/) to get coordinates of a place or address
 - Use [DarkSky API](https://darksky.net/dev) to get the weather for the coordinates
 - Display the current weather
@@ -24,7 +30,9 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 ### PostMVP
 
 - Setup the app on a secure HTTPS site
-- Enable Location Services for mobile devices
+- Enable Location Services for mobile devices 
+- Include HTML Geolocation API to get user's current location and fetch weather data
+- Include location details component
 
 ## React Component Hierarchy
 
@@ -36,11 +44,11 @@ This is the list of components I will be building and using.
 | Component | Description | 
 | --- | :---: |  
 | Home | This will render the home screen | 
-| DailyWeatherCard | This will render the weather for a given day | 
-| HourlyWeatherCard | This will render the weather for a given hour| 
-| HourlyWeatherList | This will render multiple HourlyWeatherCard components |
-| WeeklyWeatherList | This will render multiple DailyWeatherCard components |
-| WeatherIcon | This will render the weather icon from the [react-icons-weather](https://www.npmjs.com/package/react-icons-weather) npm package| 
+| WeatherCard | This will render the weather for a given day | 
+| HourlyCard | This will render the weather for a given hour| 
+| HourlyList | This will render multiple HourlyWeatherCard components |
+| WeeklyList | This will render multiple DailyWeatherCard components |
+| WeatherIcon | This will render the weather icon from the [react-animated-weather](https://www.npmjs.com/package/react-icons-weather) npm package| 
 
 
 ## Time Estimates
@@ -73,21 +81,34 @@ Helper functions should be generic enought that they can be reused in other appl
 | Library | Function | 
 | --- | :---: |  
 | [react-icons-weather](https://www.npmjs.com/package/react-icons-weather) | Allows me to render good looking icons based on the DarkSky API icon values | 
+|[react-animated-weather](https://www.npmjs.com/package/react-animated-weather)| Allows me to render animated icons based on the DarkSky API icon values | |[uid] (https://www.npmjs.com/package/react-uid)| Allows me to generate unique key necessary for React unique key property | 
+
 
 
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description  
+componentDidMount() uses geolocation API to pass coordinates on a callback function which fetches the data and set it state. 
 
-```JavaScript
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+```
+componentDidMount() {
+    if (window.navigator.geolocation) {
+      window.navigator.geolocation.getCurrentPosition(async position => {
+        let lat = position.coords.latitude;
+        let lon = position.coords.longitude;
+        let coordinates = `${lat},${lon}`
+        this.getDataFromCoordinates(coordinates, false)
+      },
+        error => {
+          console.log("Error: ", error)
+        },
+        { enableHighAccuracy: true });
+    }
+ }
 ```
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
+ A major issue for me was passing state from a controlled component to other children components. Initially I didn't lift state to App.js and I decided to go a different route - I used local storage to save and retrieve state. It was a good practice, however this is not optimal for buildin a final prototype.
 
 #### SAMPLE.....
 **ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
