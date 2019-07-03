@@ -18,9 +18,9 @@ const HourlyList = (props) => {
     </div>
     <div className="flex-center-row">
      
-      {hourly.length > 0 ? (hourly).map((item) => <div  key={uid(item)}>
-        <HourlyCard item={item} />
-      </div>
+      {hourly.length > 0 ? (hourly).map((item) => 
+        <HourlyCard key={uid(item)} item={item} />
+
       ) : <Route
           path="/"
           exact render={App} />}

@@ -8,7 +8,8 @@ export const dateMaker = timestamp => {
 export const timeConverter = timestamp => {
   let timeObject = new Date(timestamp * 1000);
   let time = Object.values(timeObject.toLocaleTimeString().replace(/([\d]+:[\d]{2})(:[\d]{2})(.*)/, "$1$3"));
-  return time
+  
+  return time.join('')
 }
 
 export const weekdayMaker = timestamp => {

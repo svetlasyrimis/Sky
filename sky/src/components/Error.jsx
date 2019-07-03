@@ -7,9 +7,9 @@ const Error = (props) => {
     <div className="flex-center-row">
       {props.error ? 
         <>
-          <div className='top-card'>
+          <div className='top-card error-card'>
             
-            <h1>{props.error}</h1></div>
+            <p>{props.error}</p></div>
         </> : ''}
     </div>
   )

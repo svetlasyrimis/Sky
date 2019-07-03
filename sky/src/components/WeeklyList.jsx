@@ -13,14 +13,16 @@ const WeeklyList = (props) => {
               <Link to="/hourly"><button className="search-btn" >Get Hourly Forecast</button></Link> 
               <Link to="/summary"><button className="search-btn" >Right Now</button></Link> 
               <Link to="/location"><button className="search-btn" >Get Location Info</button></Link> 
-        </div>
-      {weekly.length > 0 ? (weekly).map((item) => <div className='flex-center-column' key={uid(item)}>
-    
-          <WeeklyCard item={item} />
       </div>
-      ) : <Route
-          path="/"
-          exact render={App} />}
+      <div className='flex-center-row weekly-list'>
+        {weekly.length > 0 ? (weekly).map((item) => 
+      
+            <WeeklyCard item={item} key={uid(item)}/>
+        
+        ) : <Route
+            path="/"
+              exact render={App} />}
+      </div>
     </div>
   )
 
