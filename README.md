@@ -43,12 +43,18 @@ This is the list of components I will be building and using.
 
 | Component | Description | 
 | --- | :---: |  
-| Home | This will render the home screen | 
+| Home | This will render the home screen and everything else.| 
 | WeatherCard | This will render the weather for a given day | 
 | HourlyCard | This will render the weather for a given hour| 
 | HourlyList | This will render multiple HourlyWeatherCard components |
 | WeeklyList | This will render multiple DailyWeatherCard components |
 | WeatherIcon | This will render the weather icon from the [react-animated-weather](https://www.npmjs.com/package/react-icons-weather) npm package| 
+|CurrentLocation| This renders current location of the user |
+|Input| Takes an input value from the user.
+|Header| Navigation Bar |
+|Footer| 
+|LocationDetails| This renders location details.|
+|Smmary| Summary of the current forecast|
 
 
 ## Time Estimates
