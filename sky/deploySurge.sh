@@ -1,5 +1,5 @@
 git add . &&
-git commit -m '$0' &&
+git commit -m "$0" &&
 git push origin master &&
 npm run build &&
 cd build &&
