@@ -31,29 +31,34 @@ class Home extends React.Component {
 
   getDataFromCoordinates = async (coordinates, search) => {
     const response = await fetchWeather(coordinates)
-    const location = await getDetails(coordinates)
-    let details = location.data.results[0].annotations
-    let exactLocation = location.data.results[0].components
 
-    let address = location.data.results[0].formatted
-    let suburb = exactLocation.suburb
-    let flag = details.flag
+    if (response) {
+      const location = await getDetails(coordinates)
+      let details = location.data.results[0].annotations
+      let exactLocation = location.data.results[0].components
 
-    let hourly = response.hourly.data
-    let weekly = response.daily.data
+      let address = location.data.results[0].formatted
+      let suburb = exactLocation.suburb
+      let flag = details.flag
 
-    this.setState({
-      currentWeather: response.currently,
-      location: exactLocation,
-      flag: flag,
-      hourlyWeather: hourly,
-      weeklyWeather: weekly,
-      locationDetails: details,
-      address: address,
-      suburb: suburb,
-      isSearch: search
-    })
-    this.saveStateToLocalStorage()
+      let hourly = response.hourly.data
+      let weekly = response.daily.data
+
+      this.setState({
+        currentWeather: response.currently,
+        location: exactLocation,
+        flag: flag,
+        hourlyWeather: hourly,
+        weeklyWeather: weekly,
+        locationDetails: details,
+        address: address,
+        suburb: suburb,
+        isSearch: search
+      })
+      this.saveStateToLocalStorage()
+    } else {
+      console.log("Sorry no weather")
+    }
   }
 
   componentDidMount() {
